@@ -12,7 +12,7 @@ idea: sort array by ratio (profit/weight), and include items from heighest to lo
 
 
 ### balanced parentheses checker with stack:
-'''
+```
 def is_balanced_parentheses(string):
 stack = Stack()
     for char in string:
@@ -23,6 +23,6 @@ stack = Stack()
                 return False
             stack.pop()
     return stack.is_empty()
-'''
+```
 
 Explanation of solution: This function iterates through each character in the input string. If an opening parenthesis is encountered, it is pushed onto the stack. For a closing parenthesis, the function checks if the stack is empty (unmatched closing parenthesis) or pops from the stack (matching pair found). At the end, if the stack is empty, all parentheses are balanced; otherwise, they are not.
