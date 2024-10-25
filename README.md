@@ -26,3 +26,6 @@ stack = Stack()
 ```
 
 Explanation of solution: This function iterates through each character in the input string. If an opening parenthesis is encountered, it is pushed onto the stack. For a closing parenthesis, the function checks if the stack is empty (unmatched closing parenthesis) or pops from the stack (matching pair found). At the end, if the stack is empty, all parentheses are balanced; otherwise, they are not.
+
+Lookup table: Given an array of unique integers numbers, your task is to find the number of pairs of indices (i, j) such that i ≤ j and the sum numbers[i] + numbers[j] is equal to some power of 2.
+view answer and explanation in lookup table file
