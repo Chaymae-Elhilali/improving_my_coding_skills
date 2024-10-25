@@ -1,6 +1,8 @@
 Question:
 Given an array of unique integers numbers, your task is to find the number of pairs of indices (i, j) such that i ≤ j and the sum numbers[i] + numbers[j] is equal to some power of 2.
-
+Guaranteed constraints:
+1 ≤ numbers.length ≤ 105
+-106 ≤ numbers[i] ≤ 106
 
 Answer:
 from collections import defaultdict
@@ -14,3 +16,17 @@ from collections import defaultdict
            second_element = (1 << two_power) - element
            answer += counts[second_element]
    return answer 
+
+explanation: 
+This Python solution uses collections.defaultdict to create a dictionary of integers. 
+For each element in the array, the element is first counted in the dictionary. 
+Then, the loop checks for sums of all of the powers of two that are less than 221. Why stop there? 
+The constraint says that no element of the array can be greater than 106, or 1,000,000. 221 is 2,097,152, which is greater than 1 million when divided by two, 
+so there is no way that two elements could sum to 221. 
+
+To calculate the powers of two, the code uses a left shift bitwise operator: 1 << two_power in Python is the same as 2**two_power. 
+It defines second_element as the amount needed for the current element to sum to the power of two. 
+Then it looks up the count for second_element in the dictionary. 
+The number of second_elements already found in the array gets added to the answer, 
+because this is the number of pairs (so far) that sum to that power of two. By the time it reaches the end of the array, 
+this algorithm will have found all the pairs—in linear time
